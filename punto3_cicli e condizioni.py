@@ -3,6 +3,8 @@ lista_numeri=[]
 while len(lista_numeri) < 4:
     numero = int(input("inserisci numero"))
     lista_numeri.append(numero)
+    print(lista_numeri)
+
 print(lista_numeri)
 
 for i in lista_numeri:
