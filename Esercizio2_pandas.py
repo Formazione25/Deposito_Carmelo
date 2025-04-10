@@ -17,10 +17,20 @@ df['Totale Vendite'] = df['Quantità'] * df['Prezzo unitario']
 print(df)
 
 #raggruppare per prodotto
-df_prodotto= df.groupby('Prodotto').agg({'Quantità': 'sum', 'Prezzo unitario': 'sum','Città':"first"})
+df_prodotto= df.groupby('Prodotto').agg({'Quantità': 'sum', 'Prezzo unitario': 'sum','Città':"first",'Totale Vendite':'sum'})
 print(df_prodotto)
 
 #prodotto con più quantita
 data_frame_prodotto= df.groupby('Prodotto')['Quantità'].sum().idxmax()
 
 print(data_frame_prodotto)
+
+#città con più quantità
+data_frame_città= df.groupby('Città')['Quantità'].sum().idxmax()
+
+print(data_frame_città)
+
+# Selezione vendite superiori 10000
+df_ven_30 = df[df['Totale Vendite'] > 10000]
+
+print (df_ven_30)
