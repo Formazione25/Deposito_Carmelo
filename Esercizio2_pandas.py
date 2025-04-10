@@ -34,3 +34,12 @@ print(data_frame_città)
 df_ven_30 = df[df['Totale Vendite'] > 10000]
 
 print (df_ven_30)
+
+#ordinare per tot vendite
+data_frame_ordine = df.sort_values(by='Totale Vendite', ascending=False)
+print(data_frame_ordine)
+
+
+#raggruppare per città e mostriamo tot vendite
+data_raggruppato_città= df.groupby('Città').agg({'Totale Vendite':'sum'})
+print(data_raggruppato_città)
