@@ -10,11 +10,14 @@ cur.execute('''
     )
 ''')
 while True:
-    nome_inserito = input("inserisci nome")
-    cur.execute("INSERT INTO studenti (nome) VALUES (?)",(nome_inserito,))
-    conn.commit()
-    cur.execute("SELECT * FROM studenti")
-    righe = cur.fetchall()
-    for r in righe:
-        print(r)
-   
+    nome_inserito = input("inserisci nome o digita basta")
+    if nome_inserito != "basta":
+        cur.execute("INSERT INTO studenti (nome) VALUES (?)",(nome_inserito,))
+        conn.commit()
+        cur.execute("SELECT * FROM studenti")
+        righe = cur.fetchall()
+        for r in righe:
+            print(r)
+    else:
+        break
+
