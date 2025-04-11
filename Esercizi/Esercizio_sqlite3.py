@@ -30,7 +30,7 @@ while True:
     else:
         break
 
-
-
+#chiudo connessione con database 
+conn.close()
 
 
